@@ -19,6 +19,14 @@ export const postType = defineType({
       },
     }),
     defineField({
+      name: 'excerpt',
+      title: 'Excerpt',
+      type: 'string',
+      description:
+        'Short summary shown on cards and used as the SEO meta description fallback.',
+      validation: (Rule) => Rule.max(160),
+    }),
+    defineField({
       name: 'author',
       type: 'reference',
       to: {type: 'author'},

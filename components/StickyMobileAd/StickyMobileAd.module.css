@@ -1,0 +1,30 @@
+.bar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: var(--sticky-mobile-ad-height);
+  background: repeating-linear-gradient(
+    135deg,
+    var(--color-bg-alt),
+    var(--color-bg-alt) 6px,
+    transparent 6px,
+    transparent 12px
+  );
+  border-top: 1px dashed var(--color-border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-mono);
+  font-size: var(--text-9);
+  color: var(--color-text-muted);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  z-index: var(--z-mobile-ad);
+}
+
+@media (min-width: 768px) {
+  .bar {
+    display: none;
+  }
+}

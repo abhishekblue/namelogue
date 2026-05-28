@@ -1,0 +1,232 @@
+.header {
+  background: var(--color-bg-card);
+  border-bottom: 1px solid var(--color-border);
+  position: sticky;
+  top: 0;
+  z-index: var(--z-header);
+}
+
+.inner {
+  max-width: var(--container-wide);
+  margin: 0 auto;
+  padding: 12px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+  color: var(--color-text);
+}
+
+.brandMark {
+  width: 30px;
+  height: 30px;
+  border-radius: var(--radius-md);
+  background: linear-gradient(
+    135deg,
+    var(--color-accent),
+    var(--color-accent-hover)
+  );
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-text-inverse);
+  font-family: var(--font-serif);
+  font-size: var(--text-17);
+}
+
+.brandWord {
+  font-family: var(--font-serif);
+  font-size: var(--text-20);
+  color: var(--color-text);
+}
+
+.hamburger {
+  display: none;
+  background: transparent;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  width: 38px;
+  height: 38px;
+  padding: 9px;
+  cursor: pointer;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: stretch;
+}
+
+.hamburgerBar {
+  display: block;
+  height: 2px;
+  background: var(--color-text);
+  border-radius: 2px;
+}
+
+.nav {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.navList {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 4px;
+  flex-wrap: wrap;
+}
+
+.navItem {
+  position: relative;
+}
+
+.navLink {
+  font-family: var(--font-sans);
+  font-size: var(--text-13);
+  font-weight: 500;
+  color: var(--color-text-sub);
+  padding: 6px 10px;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  text-decoration: none;
+}
+
+.navLink:hover,
+.navLink:focus-visible {
+  background: var(--color-bg-alt);
+  color: var(--color-text);
+  outline: none;
+}
+
+.caret {
+  font-size: var(--text-10);
+  color: var(--color-text-muted);
+  line-height: 1;
+}
+
+.dropdown {
+  list-style: none;
+  margin: 0;
+  padding: 6px 0;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  min-width: 180px;
+  background: var(--color-bg-card);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-search);
+  z-index: var(--z-dropdown);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-4px);
+  transition: opacity 0.15s, transform 0.15s, visibility 0.15s;
+}
+
+.hasChildren:hover .dropdown,
+.hasChildren:focus-within .dropdown {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.dropdownLink {
+  display: block;
+  padding: 8px 16px;
+  font-family: var(--font-sans);
+  font-size: var(--text-13);
+  color: var(--color-text-sub);
+  text-decoration: none;
+  transition: background 0.15s, color 0.15s;
+}
+
+.dropdownLink:hover,
+.dropdownLink:focus-visible {
+  background: var(--color-bg-alt);
+  color: var(--color-text);
+  outline: none;
+}
+
+.search {
+  display: flex;
+  justify-content: flex-end;
+}
+
+/* ─── Mobile ─── */
+@media (max-width: 900px) {
+  .hamburger {
+    display: flex;
+    order: 2;
+  }
+
+  .brand {
+    order: 1;
+  }
+
+  .search {
+    order: 4;
+    width: 100%;
+    margin-top: 4px;
+  }
+
+  .nav {
+    order: 3;
+    flex: 0 0 100%;
+    display: none;
+  }
+
+  .navOpen {
+    display: block;
+  }
+
+  .navList {
+    flex-direction: column;
+    gap: 0;
+    padding-top: 8px;
+  }
+
+  .navItem {
+    border-top: 1px solid var(--color-border-soft);
+  }
+
+  .navLink {
+    padding: 12px 4px;
+    font-size: var(--text-15);
+    color: var(--color-text);
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .dropdown {
+    position: static;
+    opacity: 1;
+    visibility: visible;
+    transform: none;
+    box-shadow: none;
+    border: none;
+    border-radius: 0;
+    padding: 0 0 8px 16px;
+    background: transparent;
+  }
+
+  .dropdownLink {
+    padding: 8px 4px;
+    font-size: var(--text-14);
+  }
+}
+
+.bodyLock {
+  overflow: hidden;
+}

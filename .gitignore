@@ -39,3 +39,7 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# local scratch / design reference (not app source)
+nameverse-final-theme.jsx
+PHASE_SUMMARIES.md

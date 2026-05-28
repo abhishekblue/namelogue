@@ -1,0 +1,80 @@
+.form {
+  display: flex;
+  background: var(--color-bg-card);
+  border-radius: var(--radius-pill);
+  overflow: hidden;
+  width: 100%;
+}
+
+.small {
+  border: 1.5px solid var(--color-border-soft);
+  max-width: 340px;
+}
+
+.large {
+  border: 1.5px solid var(--color-border);
+  max-width: 560px;
+  box-shadow: var(--shadow-search);
+}
+
+.icon {
+  display: flex;
+  align-items: center;
+  color: var(--color-text-muted);
+}
+
+.small .icon {
+  padding: 0 0 0 14px;
+  font-size: var(--text-14);
+}
+
+.large .icon {
+  padding: 0 0 0 20px;
+  font-size: var(--text-18);
+}
+
+.input {
+  flex: 1;
+  border: none;
+  outline: none;
+  font-family: var(--font-sans);
+  color: var(--color-text);
+  background: transparent;
+  min-width: 0;
+}
+
+.small .input {
+  padding: 9px 10px;
+  font-size: var(--text-13);
+}
+
+.large .input {
+  padding: 16px 12px;
+  font-size: var(--text-16);
+}
+
+.button {
+  background: var(--color-accent);
+  color: var(--color-text-inverse);
+  border: none;
+  font-family: var(--font-sans);
+  font-weight: 600;
+  cursor: pointer;
+  border-radius: var(--radius-pill);
+  margin: 4px;
+  transition: background 0.15s;
+}
+
+.small .button {
+  padding: 8px 16px;
+  font-size: var(--text-12);
+}
+
+.large .button {
+  padding: 14px 28px;
+  font-size: var(--text-14);
+}
+
+.button:hover {
+  background: var(--color-accent-hover);
+}
